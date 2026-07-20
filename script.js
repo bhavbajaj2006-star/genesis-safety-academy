@@ -116,6 +116,59 @@
   });
 })();
 
+// ===== Gallery lightbox =====
+(function galleryLightbox() {
+  const items = Array.from(document.querySelectorAll('.gallery-item'));
+  if (!items.length) return;
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightboxImage');
+  const closeBtn = document.getElementById('lightboxClose');
+  const prevBtn = document.getElementById('lightboxPrev');
+  const nextBtn = document.getElementById('lightboxNext');
+  let currentIndex = 0;
+  let lastFocused = null;
+
+  function show(index) {
+    currentIndex = (index + items.length) % items.length;
+    const img = items[currentIndex].querySelector('img');
+    lightboxImage.src = img.src;
+    lightboxImage.alt = img.alt;
+  }
+
+  function open(index) {
+    lastFocused = document.activeElement;
+    show(index);
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+    document.addEventListener('keydown', onKeydown);
+  }
+
+  function close() {
+    lightbox.hidden = true;
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKeydown);
+    if (lastFocused) lastFocused.focus();
+  }
+
+  function onKeydown(e) {
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowRight') show(currentIndex + 1);
+    if (e.key === 'ArrowLeft') show(currentIndex - 1);
+  }
+
+  items.forEach((item, index) => {
+    item.addEventListener('click', () => open(index));
+  });
+  closeBtn.addEventListener('click', close);
+  prevBtn.addEventListener('click', () => show(currentIndex - 1));
+  nextBtn.addEventListener('click', () => show(currentIndex + 1));
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) close();
+  });
+})();
+
 // ===== Contact form =====
 (function contactForm() {
   const form = document.getElementById('contactForm');
