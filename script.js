@@ -21,6 +21,21 @@
   }
 })();
 
+// ===== Band 1 photo slideshow (fast cycle) =====
+(function band1Slideshow() {
+  const slides = document.querySelectorAll('.band1-slide');
+  if (!slides.length) return;
+  let current = 0;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) return;
+
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 2500);
+})();
+
 // ===== Sticky header shadow =====
 (function stickyHeader() {
   const header = document.getElementById('siteHeader');
@@ -73,12 +88,14 @@
   const navLinks = document.querySelectorAll('.main-nav a[href]');
   let current = location.pathname.split('/').pop();
   if (current === '') current = 'index.html';
+  const onCourseDetailPage = current.startsWith('course-');
 
   navLinks.forEach((link) => {
     const href = link.getAttribute('href');
     if (!href || href.startsWith('#')) return;
     const linkPage = href.split('/').pop();
-    link.classList.toggle('active', linkPage === current);
+    const isMatch = linkPage === current || (onCourseDetailPage && linkPage === 'courses.html');
+    link.classList.toggle('active', isMatch);
   });
 })();
 
@@ -135,6 +152,8 @@
   if (!items.length || !lightbox) return;
 
   const lightboxImage = document.getElementById('lightboxImage');
+  const lightboxName = document.getElementById('lightboxName');
+  const lightboxLoc = document.getElementById('lightboxLoc');
   const closeBtn = document.getElementById('lightboxClose');
   const prevBtn = document.getElementById('lightboxPrev');
   const nextBtn = document.getElementById('lightboxNext');
@@ -143,9 +162,12 @@
 
   function show(index) {
     currentIndex = (index + items.length) % items.length;
-    const img = items[currentIndex].querySelector('img');
+    const activeItem = items[currentIndex];
+    const img = activeItem.querySelector('img');
     lightboxImage.src = img.src;
     lightboxImage.alt = img.alt;
+    if (lightboxName) lightboxName.textContent = activeItem.dataset.name || '';
+    if (lightboxLoc) lightboxLoc.textContent = activeItem.dataset.location || '';
   }
 
   function open(index) {
@@ -224,6 +246,70 @@
       form.hidden = false;
     });
   }
+})();
+
+// ===== Course search filter =====
+(function courseSearch() {
+  const input = document.getElementById('courseSearch');
+  const grid = document.getElementById('courseGrid');
+  const emptyMsg = document.getElementById('courseSearchEmpty');
+  if (!input || !grid) return;
+
+  const cards = Array.from(grid.querySelectorAll('[data-course-name]'));
+
+  input.addEventListener('input', () => {
+    const query = input.value.trim().toLowerCase();
+    let visibleCount = 0;
+    cards.forEach((card) => {
+      const matches = card.dataset.courseName.includes(query);
+      card.style.display = matches ? '' : 'none';
+      if (matches) visibleCount++;
+    });
+    if (emptyMsg) emptyMsg.hidden = visibleCount !== 0;
+  });
+})();
+
+// ===== Stats count-up ("Numbers says it all") =====
+(function statsCountUp() {
+  const nums = document.querySelectorAll('.stat-num[data-count]');
+  if (!nums.length) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function setFinal(el) {
+    const target = parseInt(el.dataset.count, 10) || 0;
+    el.textContent = target + (el.dataset.suffix || '');
+  }
+
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    nums.forEach(setFinal);
+    return;
+  }
+
+  function run(el) {
+    const target = parseInt(el.dataset.count, 10) || 0;
+    const suffix = el.dataset.suffix || '';
+    const duration = 1400;
+    const start = performance.now();
+    function tick(now) {
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        run(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  nums.forEach((el) => observer.observe(el));
 })();
 
 // ===== Footer year =====

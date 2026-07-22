@@ -7,7 +7,7 @@
 <meta name="description" content="Genesis Safety Academy, Chennai — Fire, Industrial, Construction, Chemical &amp; Environmental Safety courses, corporate training, certifications and safety products." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20" />
+<link rel="stylesheet" href="styles.css?v=35" />
 </head>
 <body>
 
@@ -40,7 +40,7 @@
 <header class="site-header" id="siteHeader">
   <div class="container nav-inner">
     <a href="index.html" class="logo">
-      <img src="images/brand/genesis-logo.png" alt="Genesis Safety Academy" class="logo-img" />
+      <img src="images/brand/genesis-logo.png" alt="Genesis Safety Academy (Unit of Genesis Enterprises)" class="logo-img" />
     </a>
     <nav class="main-nav" id="mainNav">
       <div class="mobile-nav-head">
@@ -86,58 +86,59 @@
 </header>
 <div class="nav-backdrop" id="navBackdrop"></div>
 
-<!-- ══ 1. HERO (First Band) ══ -->
-<section class="hero">
-  <div class="hero-slideshow" id="heroSlideshow">
-    <div class="hero-slide active" style="background-image:url('images/hero/banner-1.jpg')"></div>
-    <div class="hero-slide" style="background-image:url('images/hero/banner-2.jpg')"></div>
-    <div class="hero-slide" style="background-image:url('images/hero/banner-3.jpg')"></div>
-    <div class="hero-scrim"></div>
-    <div class="container hero-content">
-      <span class="hero-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1 3-1 4-1 6a3 3 0 0 0 6 .5c1.5 2 2 3.7 2 5.5a7 7 0 1 1-14 0c0-3 2-5 3.5-7C10 9 9 6 12 2Z"/></svg>
-        A Hub for Skill Development
-      </span>
-      <h1>India's most preferred Safety Training, Certifications &amp; Safety Courses Institution</h1>
-      <p class="hero-desc">Fire, industrial, construction &amp; chemical safety courses, corporate training and certification — with placement assistance and hands-on practicals.</p>
-      <div class="hero-actions">
-        <a href="courses.html" class="btn btn-flame btn-lg">Explore Courses
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+<!-- ══ FIRST FOLD — Band 1 + Band 2 (both fully visible on load) ══ -->
+<div class="first-fold">
+
+  <!-- ══ BAND 1 — Corporate Training photo | program links ══ -->
+  <section class="band1">
+    <div class="container band1-inner">
+      <div class="band1-photo" id="band1Slideshow">
+        <img class="band1-slide active" src="images/gallery/photo-3.jpg" alt="Genesis Safety Academy corporate training session in progress" />
+        <img class="band1-slide" src="images/hero/banner-1.jpg" alt="Genesis Safety Academy corporate training session in progress" />
+        <img class="band1-slide" src="images/hero/banner-2.jpg" alt="Genesis Safety Academy corporate training session in progress" />
+        <img class="band1-slide" src="images/hero/banner-3.jpg" alt="Genesis Safety Academy corporate training session in progress" />
+        <img class="band1-slide" src="images/gallery/photo-1.jpg" alt="Genesis Safety Academy corporate training session in progress" />
+        <span class="band1-photo-badge">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M6 21V8l6-4 6 4v13M10 21v-5h4v5"/></svg>
+          Corporate Training
+        </span>
+      </div>
+      <div class="band1-programs">
+        <span class="band1-programs-eyebrow">What we offer</span>
+        <a href="corporate.html" class="band1-program">
+          <span class="band1-program-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M6 21V8l6-4 6 4v13M10 21v-5h4v5"/></svg></span>
+          <span class="band1-program-title">Corporate Training</span>
+          <svg class="band1-program-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a href="corporate.html" class="btn btn-ghost-light btn-lg">Book Corporate Training</a>
+        <a href="courses.html" class="band1-program">
+          <span class="band1-program-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 3 6v6c0 5 4 8 9 10 5-2 9-5 9-10V6l-9-4Z"/></svg></span>
+          <span class="band1-program-title">Safety Courses</span>
+          <svg class="band1-program-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="courses.html" class="band1-program">
+          <span class="band1-program-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 15a5 5 0 1 0 0-10 5 5 0 0 0 0 10ZM9 14l-1 7 4-2 4 2-1-7"/></svg></span>
+          <span class="band1-program-title">Safety Audit &amp; Certifications</span>
+          <svg class="band1-program-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
       </div>
     </div>
-    <div class="hero-dots" id="heroDots">
-      <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
-      <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
-      <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
+  </section>
+
+  <!-- ══ BAND 2 — A Hub for Skill Development + headline ══ -->
+  <section class="band2">
+    <div class="container band2-inner">
+      <span class="band2-eyebrow">A Hub for Skill Development</span>
+      <h1 class="band2-title">India's most preferred Safety Training, Certifications &amp; Safety Courses Institution</h1>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ══ PILLARS — Corporate Training / Safety Courses / Safety Audit & Certifications ══ -->
-<section class="pillars">
-  <div class="container pillars-grid">
-    <a href="courses.html" class="pillar">
-      <span class="pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 3 6v6c0 5 4 8 9 10 5-2 9-5 9-10V6l-9-4Z"/></svg></span>
-      <span><span class="pillar-title">Safety Courses</span><span class="pillar-sub">Diploma &amp; certification programs</span></span>
-    </a>
-    <a href="corporate.html" class="pillar">
-      <span class="pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M6 21V8l6-4 6 4v13M10 21v-5h4v5"/></svg></span>
-      <span><span class="pillar-title">Corporate Training</span><span class="pillar-sub">On-site &amp; tailored to your industry</span></span>
-    </a>
-    <a href="courses.html" class="pillar pillar-last">
-      <span class="pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 15a5 5 0 1 0 0-10 5 5 0 0 0 0 10ZM9 14l-1 7 4-2 4 2-1-7"/></svg></span>
-      <span><span class="pillar-title">Safety Audit &amp; Certifications</span><span class="pillar-sub">Recognised, job-oriented credentials</span></span>
-    </a>
-  </div>
-</section>
+</div>
 
-<!-- ══ 3. VISION & MISSION (Third Band) ══ -->
+<!-- ══ BAND 3 — Vision & Mission Statement ══ -->
 <section class="vm-band">
   <div class="container vm-band-inner">
     <div class="section-head-center">
-      <span class="eyebrow">Hub for Skill Development</span>
+      <span class="eyebrow eyebrow-flame">Who We Are</span>
       <h2>Vision &amp; Mission Statement</h2>
     </div>
     <div class="vm-blocks vm-blocks-home">
@@ -158,191 +159,115 @@
   </div>
 </section>
 
-<!-- ══ WHY GENESIS ══ -->
-<section class="why">
+<!-- ══ BAND 4 — Corporate Training photos scrolling with company names ══ -->
+<section class="training-band">
   <div class="container">
     <div class="section-head-center">
-      <span class="eyebrow">WHY GENESIS?</span>
-      <h2>Everything you need to train, certify and grow.</h2>
+      <span class="eyebrow eyebrow-flame">Corporate Training</span>
+      <h2>Trusted by leading companies</h2>
     </div>
-    <div class="why-grid">
-      <div class="blueprint why-card">
-        <span class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 7v5l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/></svg></span>
-        <h4>Flexible Offline Class Hours</h4>
-        <p>Weekday, weekend or evening sessions — learn on your schedule.</p>
-      </div>
-      <div class="blueprint why-card">
-        <span class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 11l-3 3-2-2"/></svg></span>
-        <h4>Placement Assistance</h4>
-        <p>We connect students with top employers well beyond the classroom.</p>
-      </div>
-      <div class="blueprint why-card">
-        <span class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s7-6.7 7-12a7 7 0 1 0-14 0c0 5.3 7 12 7 12ZM12 11a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg></span>
-        <h4>Easy To Access</h4>
-        <p>Located at Koyambedu, Chennai — next to Truegaz filling station.</p>
-      </div>
-      <div class="blueprint why-card">
-        <span class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M6 21V8l6-4 6 4v13M10 21v-5h4v5"/></svg></span>
-        <h4>Corporate Safety Trainings</h4>
-        <p>Industry-specific programs that keep your workforce compliant.</p>
-      </div>
-      <div class="blueprint why-card">
-        <span class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5h18v12H3zM8 21h8M12 17v4"/></svg></span>
-        <h4>Online Classes</h4>
-        <p>Learn safety anytime, anywhere with our online courses.</p>
-      </div>
-      <div class="blueprint why-card">
-        <span class="why-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20M4 20V8l5-3v15M14 20V4l6 4v12M8 9h1M8 12h1M17 11h1M17 14h1"/></svg></span>
-        <h4>Industrial Visits</h4>
-        <p>Hands-on exposure to real-world safety practices on real sites.</p>
-      </div>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track training-track">
+      <figure class="training-card"><img src="images/gallery/photo-1.jpg" alt="Genesis Safety Academy corporate training session" /><figcaption>Ascendas Vinplex</figcaption></figure>
+      <figure class="training-card"><img src="images/gallery/photo-2.jpg" alt="Genesis Safety Academy corporate training session" /><figcaption>Bontaz Hira</figcaption></figure>
+      <figure class="training-card"><img src="images/gallery/photo-4.jpg" alt="Genesis Safety Academy corporate training session" /><figcaption>BYD</figcaption></figure>
+      <figure class="training-card"><img src="images/gallery/photo-5.jpg" alt="Genesis Safety Academy corporate training session" /><figcaption>DLF</figcaption></figure>
+      <figure class="training-card"><img src="images/gallery/photo-6.jpg" alt="Genesis Safety Academy corporate training session" /><figcaption>TVS</figcaption></figure>
+      <figure class="training-card"><img src="images/gallery/photo-7.jpg" alt="Genesis Safety Academy corporate training session" /><figcaption>SRF</figcaption></figure>
+      <figure class="training-card"><img src="images/gallery/photo-8.jpg" alt="Genesis Safety Academy corporate training session" /><figcaption>Denix</figcaption></figure>
+      <figure class="training-card"><img src="images/gallery/photo-9.jpg" alt="Genesis Safety Academy corporate training session" /><figcaption>Hindustan Inst. of Tech &amp; Science</figcaption></figure>
+      <figure class="training-card"><img src="images/about/training-session.jpg" alt="Genesis Safety Academy corporate training session" /><figcaption>Arudra Engineers</figcaption></figure>
+      <figure class="training-card"><img src="images/gallery/photo-3.jpg" alt="Genesis Safety Academy corporate training session" /><figcaption>NortonLifeLock</figcaption></figure>
+      <!-- duplicate set for seamless loop -->
+      <figure class="training-card" aria-hidden="true"><img src="images/gallery/photo-1.jpg" alt="" /><figcaption>Ascendas Vinplex</figcaption></figure>
+      <figure class="training-card" aria-hidden="true"><img src="images/gallery/photo-2.jpg" alt="" /><figcaption>Bontaz Hira</figcaption></figure>
+      <figure class="training-card" aria-hidden="true"><img src="images/gallery/photo-4.jpg" alt="" /><figcaption>BYD</figcaption></figure>
+      <figure class="training-card" aria-hidden="true"><img src="images/gallery/photo-5.jpg" alt="" /><figcaption>DLF</figcaption></figure>
+      <figure class="training-card" aria-hidden="true"><img src="images/gallery/photo-6.jpg" alt="" /><figcaption>TVS</figcaption></figure>
+      <figure class="training-card" aria-hidden="true"><img src="images/gallery/photo-7.jpg" alt="" /><figcaption>SRF</figcaption></figure>
+      <figure class="training-card" aria-hidden="true"><img src="images/gallery/photo-8.jpg" alt="" /><figcaption>Denix</figcaption></figure>
+      <figure class="training-card" aria-hidden="true"><img src="images/gallery/photo-9.jpg" alt="" /><figcaption>Hindustan Inst. of Tech &amp; Science</figcaption></figure>
+      <figure class="training-card" aria-hidden="true"><img src="images/about/training-session.jpg" alt="" /><figcaption>Arudra Engineers</figcaption></figure>
+      <figure class="training-card" aria-hidden="true"><img src="images/gallery/photo-3.jpg" alt="" /><figcaption>NortonLifeLock</figcaption></figure>
     </div>
   </div>
 </section>
 
-<!-- ══ 6. SAFETY PRODUCTS OFFERING (6th Band) ══ -->
-<section class="products">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <span class="eyebrow eyebrow-flame">Our Safety Products Offering</span>
-        <h2>Equipment that keeps your site compliant.</h2>
-      </div>
-      <p class="section-note">Click any category to enquire — our team will share the full catalogue and pricing.</p>
-    </div>
-
-    <div class="product-grid product-grid-categories">
-      <a href="enquiry.html" class="blueprint product-card" data-enquiry="Fire Extinguishers">
-        <span class="duotone product-thumb"><img src="images/products/fire-extinguishers.jpg" alt="Fire Extinguishers" /></span>
-        <span class="product-body"><span class="product-name">Fire Extinguishers</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-      </a>
-      <a href="enquiry.html" class="blueprint product-card" data-enquiry="Fire Fighting Accessories">
-        <span class="duotone product-thumb"><img src="images/products/fire-fighting-accessories.jpg" alt="Fire Fighting Accessories" /></span>
-        <span class="product-body"><span class="product-name">Fire Fighting Accessories</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-      </a>
-      <a href="enquiry.html" class="blueprint product-card" data-enquiry="Smoke Detectors">
-        <span class="duotone product-thumb"><img src="images/products/smoke-detectors.jpg" alt="Smoke Detectors" /></span>
-        <span class="product-body"><span class="product-name">Smoke Detectors</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-      </a>
-      <a href="enquiry.html" class="blueprint product-card" data-enquiry="Fire Detection and Alarm Systems">
-        <span class="duotone product-thumb"><img src="images/products/fire-detection-alarm.jpg" alt="Fire Detection and Alarm Systems" /></span>
-        <span class="product-body"><span class="product-name">Fire Detection and Alarm Systems</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-      </a>
-      <a href="enquiry.html" class="blueprint product-card" data-enquiry="Escape Signages & Tapes">
-        <span class="duotone product-thumb"><img src="images/products/escape-signages.jpg" alt="Escape Signages & Tapes" /></span>
-        <span class="product-body"><span class="product-name">Escape Signages &amp; Tapes</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-      </a>
-      <a href="enquiry.html" class="blueprint product-card product-card-text" data-enquiry="Emergency Lighting Systems">
-        <span class="product-body product-body-text"><span class="product-name">Emergency Lighting Systems</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-      </a>
-      <a href="enquiry.html" class="blueprint product-card product-card-text" data-enquiry="CCTV">
-        <span class="product-body product-body-text"><span class="product-name">CCTV</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-      </a>
-      <a href="enquiry.html" class="blueprint product-card product-card-text" data-enquiry="Burglary Alarm Systems">
-        <span class="product-body product-body-text"><span class="product-name">Burglary Alarm Systems</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ══ 5. SAFETY COURSES SCROLLING (5th Band) ══ -->
+<!-- ══ BAND 5 — Safety Courses scrolling ══ -->
 <section class="courses">
   <div class="container">
     <div class="section-head">
       <div>
         <span class="eyebrow eyebrow-flame">Our Courses</span>
-        <h2>Genesis Safety Academy Courses</h2>
+        <h2>Safety Courses</h2>
       </div>
       <a href="courses.html" class="section-cta">View all courses<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
-    <div class="course-grid">
-      <a href="courses.html" class="blueprint course-card">
-        <span class="duotone course-thumb"><img src="images/courses/fire-safety.jpg" alt="Certificate Course in Fire Safety" /></span>
-        <span class="course-body">
-          <span class="course-tag">Certificate</span>
-          <span class="course-name">Certificate Course in Fire Safety</span>
-          <span class="course-desc">45 hrs total &middot; 2.5 hrs/day &middot; 3 days/week</span>
-          <span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </span>
-      </a>
-      <a href="courses.html" class="blueprint course-card">
-        <span class="duotone course-thumb"><img src="images/courses/industrial-safety.jpg" alt="Certificate Course in Industrial Safety" /></span>
-        <span class="course-body">
-          <span class="course-tag">Certificate</span>
-          <span class="course-name">Certificate Course in Industrial Safety</span>
-          <span class="course-desc">45 hrs total &middot; 2.5 hrs/day &middot; 3 days/week</span>
-          <span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </span>
-      </a>
-      <a href="courses.html" class="blueprint course-card">
-        <span class="duotone course-thumb"><img src="images/courses/construction-safety.jpg" alt="Certificate Course in Construction Safety" /></span>
-        <span class="course-body">
-          <span class="course-tag">Certificate</span>
-          <span class="course-name">Certificate Course in Construction Safety</span>
-          <span class="course-desc">45 hrs total &middot; 2.5 hrs/day &middot; 3 days/week</span>
-          <span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </span>
-      </a>
-      <a href="courses.html" class="blueprint course-card">
-        <span class="duotone course-thumb"><img src="images/courses/chemical-biohazard-safety.jpg" alt="Certificate Course in Chemical and Biohazard Safety" /></span>
-        <span class="course-body">
-          <span class="course-tag">Certificate</span>
-          <span class="course-name">Certificate Course in Chemical and Biohazard Safety</span>
-          <span class="course-desc">45 hrs total &middot; 2.5 hrs/day &middot; 3 days/week</span>
-          <span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </span>
-      </a>
-      <a href="courses.html" class="blueprint course-card">
-        <span class="duotone course-thumb"><img src="images/courses/electrical-safety.jpg" alt="Certificate Course in Electrical Safety at Construction Site" /></span>
-        <span class="course-body">
-          <span class="course-tag">Certificate</span>
-          <span class="course-name">Certificate Course in Electrical Safety at Construction Site</span>
-          <span class="course-desc">45 hrs total &middot; 2.5 hrs/day &middot; 3 days/week</span>
-          <span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </span>
-      </a>
-      <a href="courses.html" class="blueprint course-card">
-        <span class="duotone course-thumb"><img src="images/courses/environment-health-safety.jpg" alt="Certificate Course in Environment, Health and Safety" /></span>
-        <span class="course-body">
-          <span class="course-tag">Certificate</span>
-          <span class="course-name">Certificate Course in Environment, Health and Safety</span>
-          <span class="course-desc">45 hrs total &middot; 2.5 hrs/day &middot; 3 days/week</span>
-          <span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </span>
-      </a>
-      <a href="courses.html" class="blueprint course-card">
-        <span class="duotone course-thumb"><img src="images/courses/health-impact-psychological.jpg" alt="Certificate Course in Health Impact Psychological Hazards at Work Place" /></span>
-        <span class="course-body">
-          <span class="course-tag">Certificate</span>
-          <span class="course-name">Certificate Course in Health Impact Psychological Hazards at Work Place</span>
-          <span class="course-desc">45 hrs total &middot; 2.5 hrs/day &middot; 3 days/week</span>
-          <span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </span>
-      </a>
-      <a href="courses.html" class="blueprint course-card">
-        <span class="duotone course-thumb"><img src="images/courses/disaster-management.jpg" alt="Certificate Course in Disaster Management" /></span>
-        <span class="course-body">
-          <span class="course-tag">Certificate</span>
-          <span class="course-name">Certificate Course in Disaster Management</span>
-          <span class="course-desc">45 hrs total &middot; 2.5 hrs/day &middot; 3 days/week</span>
-          <span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </span>
-      </a>
-      <a href="courses.html" class="blueprint course-card course-card-featured">
-        <span class="duotone course-thumb"><img src="images/courses/advance-diploma.jpg" alt="Advance Diploma in Fire & Industrial Safety Engineering (ADFISE)" /></span>
-        <span class="course-body">
-          <span class="course-tag">Diploma</span>
-          <span class="course-name">Advance Diploma in Fire &amp; Industrial Safety Engineering (ADFISE)</span>
-          <span class="course-desc">180 hrs total &middot; 4 hrs/day &middot; 5 days/week</span>
-          <span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </span>
-      </a>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track course-track">
+      <a href="courses.html" class="blueprint course-card"><span class="duotone course-thumb"><img src="images/courses/fire-safety.jpg" alt="Certificate Course in Fire Safety" /></span><span class="course-body"><span class="course-tag">Certificate</span><span class="course-name">Certificate Course in Fire Safety</span><span class="course-desc">45 hrs total &middot; 2.5 hrs/day &middot; 3 days/week</span><span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="courses.html" class="blueprint course-card"><span class="duotone course-thumb"><img src="images/courses/industrial-safety.jpg" alt="Certificate Course in Industrial Safety" /></span><span class="course-body"><span class="course-tag">Certificate</span><span class="course-name">Certificate Course in Industrial Safety</span><span class="course-desc">45 hrs total &middot; 2.5 hrs/day &middot; 3 days/week</span><span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="courses.html" class="blueprint course-card"><span class="duotone course-thumb"><img src="images/courses/construction-safety.jpg" alt="Certificate Course in Construction Safety" /></span><span class="course-body"><span class="course-tag">Certificate</span><span class="course-name">Certificate Course in Construction Safety</span><span class="course-desc">45 hrs total &middot; 2.5 hrs/day &middot; 3 days/week</span><span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="courses.html" class="blueprint course-card"><span class="duotone course-thumb"><img src="images/courses/chemical-biohazard-safety.jpg" alt="Certificate Course in Chemical and Biohazard Safety" /></span><span class="course-body"><span class="course-tag">Certificate</span><span class="course-name">Certificate Course in Chemical and Biohazard Safety</span><span class="course-desc">45 hrs total &middot; 2.5 hrs/day &middot; 3 days/week</span><span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="courses.html" class="blueprint course-card"><span class="duotone course-thumb"><img src="images/courses/electrical-safety.jpg" alt="Certificate Course in Electrical Safety at Construction Site" /></span><span class="course-body"><span class="course-tag">Certificate</span><span class="course-name">Certificate Course in Electrical Safety at Construction Site</span><span class="course-desc">45 hrs total &middot; 2.5 hrs/day &middot; 3 days/week</span><span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="courses.html" class="blueprint course-card"><span class="duotone course-thumb"><img src="images/courses/environment-health-safety.jpg" alt="Certificate Course in Environment, Health and Safety" /></span><span class="course-body"><span class="course-tag">Certificate</span><span class="course-name">Certificate Course in Environment, Health and Safety</span><span class="course-desc">45 hrs total &middot; 2.5 hrs/day &middot; 3 days/week</span><span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="courses.html" class="blueprint course-card"><span class="duotone course-thumb"><img src="images/courses/health-impact-psychological.jpg" alt="Diploma in Food Safety" /></span><span class="course-body"><span class="course-tag">Diploma</span><span class="course-name">Diploma in Food Safety</span><span class="course-desc">Batch dates &amp; duration on request</span><span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="courses.html" class="blueprint course-card"><span class="duotone course-thumb"><img src="images/courses/disaster-management.jpg" alt="Certificate Course in Oil &amp; Gas Safety" /></span><span class="course-body"><span class="course-tag">Certificate</span><span class="course-name">Certificate Course in Oil &amp; Gas Safety</span><span class="course-desc">Batch dates &amp; duration on request</span><span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="courses.html" class="blueprint course-card course-card-featured"><span class="duotone course-thumb"><img src="images/courses/advance-diploma.jpg" alt="Advance Diploma in Fire & Industrial Safety Engineering (ADFISE)" /></span><span class="course-body"><span class="course-tag">Diploma</span><span class="course-name">Advance Diploma in Fire &amp; Industrial Safety Engineering (ADFISE)</span><span class="course-desc">180 hrs total &middot; 4 hrs/day &middot; 5 days/week</span><span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <!-- duplicate set for seamless loop -->
+      <a href="courses.html" class="blueprint course-card" aria-hidden="true" tabindex="-1"><span class="duotone course-thumb"><img src="images/courses/fire-safety.jpg" alt="" /></span><span class="course-body"><span class="course-tag">Certificate</span><span class="course-name">Certificate Course in Fire Safety</span><span class="course-desc">45 hrs total &middot; 2.5 hrs/day &middot; 3 days/week</span><span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="courses.html" class="blueprint course-card" aria-hidden="true" tabindex="-1"><span class="duotone course-thumb"><img src="images/courses/industrial-safety.jpg" alt="" /></span><span class="course-body"><span class="course-tag">Certificate</span><span class="course-name">Certificate Course in Industrial Safety</span><span class="course-desc">45 hrs total &middot; 2.5 hrs/day &middot; 3 days/week</span><span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="courses.html" class="blueprint course-card" aria-hidden="true" tabindex="-1"><span class="duotone course-thumb"><img src="images/courses/construction-safety.jpg" alt="" /></span><span class="course-body"><span class="course-tag">Certificate</span><span class="course-name">Certificate Course in Construction Safety</span><span class="course-desc">45 hrs total &middot; 2.5 hrs/day &middot; 3 days/week</span><span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="courses.html" class="blueprint course-card" aria-hidden="true" tabindex="-1"><span class="duotone course-thumb"><img src="images/courses/chemical-biohazard-safety.jpg" alt="" /></span><span class="course-body"><span class="course-tag">Certificate</span><span class="course-name">Certificate Course in Chemical and Biohazard Safety</span><span class="course-desc">45 hrs total &middot; 2.5 hrs/day &middot; 3 days/week</span><span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="courses.html" class="blueprint course-card" aria-hidden="true" tabindex="-1"><span class="duotone course-thumb"><img src="images/courses/electrical-safety.jpg" alt="" /></span><span class="course-body"><span class="course-tag">Certificate</span><span class="course-name">Certificate Course in Electrical Safety at Construction Site</span><span class="course-desc">45 hrs total &middot; 2.5 hrs/day &middot; 3 days/week</span><span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="courses.html" class="blueprint course-card" aria-hidden="true" tabindex="-1"><span class="duotone course-thumb"><img src="images/courses/environment-health-safety.jpg" alt="" /></span><span class="course-body"><span class="course-tag">Certificate</span><span class="course-name">Certificate Course in Environment, Health and Safety</span><span class="course-desc">45 hrs total &middot; 2.5 hrs/day &middot; 3 days/week</span><span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="courses.html" class="blueprint course-card" aria-hidden="true" tabindex="-1"><span class="duotone course-thumb"><img src="images/courses/health-impact-psychological.jpg" alt="" /></span><span class="course-body"><span class="course-tag">Diploma</span><span class="course-name">Diploma in Food Safety</span><span class="course-desc">Batch dates &amp; duration on request</span><span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="courses.html" class="blueprint course-card" aria-hidden="true" tabindex="-1"><span class="duotone course-thumb"><img src="images/courses/disaster-management.jpg" alt="" /></span><span class="course-body"><span class="course-tag">Certificate</span><span class="course-name">Certificate Course in Oil &amp; Gas Safety</span><span class="course-desc">Batch dates &amp; duration on request</span><span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="courses.html" class="blueprint course-card course-card-featured" aria-hidden="true" tabindex="-1"><span class="duotone course-thumb"><img src="images/courses/advance-diploma.jpg" alt="" /></span><span class="course-body"><span class="course-tag">Diploma</span><span class="course-name">Advance Diploma in Fire &amp; Industrial Safety Engineering (ADFISE)</span><span class="course-desc">180 hrs total &middot; 4 hrs/day &middot; 5 days/week</span><span class="course-link">View details<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
     </div>
-    <p class="section-note course-note">All 9 certified &amp; diploma courses shown above. <a href="courses.html">View full curriculum, batch dates &amp; enrolment →</a></p>
+  </div>
+  <div class="container">
+    <p class="section-note course-note">All 9 certified &amp; diploma courses. <a href="courses.html">View full curriculum, batch dates &amp; enrolment →</a></p>
   </div>
 </section>
 
-<!-- ══ 7. NUMBERS SAYS IT ALL / WHY CHOOSE US (7th Band) ══ -->
+<!-- ══ BAND 6 — Safety Products Offering scrolling ══ -->
+<section class="products">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow eyebrow-flame">Our Safety Products Offering</span>
+        <h2>Safety Products</h2>
+      </div>
+      <p class="section-note">Click any category to enquire — our team will share the full catalogue and pricing.</p>
+    </div>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track product-track">
+      <a href="enquiry.html" class="blueprint product-card" data-enquiry="Fire Extinguishers"><span class="duotone product-thumb"><img src="images/products/fire-extinguishers.jpg" alt="Fire Extinguishers" /></span><span class="product-body"><span class="product-name">Fire Extinguishers</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="enquiry.html" class="blueprint product-card" data-enquiry="Fire Fighting Accessories"><span class="duotone product-thumb"><img src="images/products/fire-fighting-accessories.jpg" alt="Fire Fighting Accessories" /></span><span class="product-body"><span class="product-name">Fire Fighting Accessories</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="enquiry.html" class="blueprint product-card" data-enquiry="Smoke Detectors"><span class="duotone product-thumb"><img src="images/products/smoke-detectors.jpg" alt="Smoke Detectors" /></span><span class="product-body"><span class="product-name">Smoke Detectors</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="enquiry.html" class="blueprint product-card" data-enquiry="Fire Detection and Alarm Systems"><span class="duotone product-thumb"><img src="images/products/fire-detection-alarm.jpg" alt="Fire Detection and Alarm Systems" /></span><span class="product-body"><span class="product-name">Fire Detection and Alarm Systems</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="enquiry.html" class="blueprint product-card" data-enquiry="Escape Signages & Tapes"><span class="duotone product-thumb"><img src="images/products/escape-signages.jpg" alt="Escape Signages & Tapes" /></span><span class="product-body"><span class="product-name">Escape Signages &amp; Tapes</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="enquiry.html" class="blueprint product-card product-card-text" data-enquiry="Emergency Lighting Systems"><span class="product-body product-body-text"><span class="product-name">Emergency Lighting Systems</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="enquiry.html" class="blueprint product-card product-card-text" data-enquiry="CCTV"><span class="product-body product-body-text"><span class="product-name">CCTV</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="enquiry.html" class="blueprint product-card product-card-text" data-enquiry="Burglary Alarm Systems"><span class="product-body product-body-text"><span class="product-name">Burglary Alarm Systems</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <!-- duplicate set for seamless loop -->
+      <a href="enquiry.html" class="blueprint product-card" data-enquiry="Fire Extinguishers" aria-hidden="true" tabindex="-1"><span class="duotone product-thumb"><img src="images/products/fire-extinguishers.jpg" alt="" /></span><span class="product-body"><span class="product-name">Fire Extinguishers</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="enquiry.html" class="blueprint product-card" data-enquiry="Fire Fighting Accessories" aria-hidden="true" tabindex="-1"><span class="duotone product-thumb"><img src="images/products/fire-fighting-accessories.jpg" alt="" /></span><span class="product-body"><span class="product-name">Fire Fighting Accessories</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="enquiry.html" class="blueprint product-card" data-enquiry="Smoke Detectors" aria-hidden="true" tabindex="-1"><span class="duotone product-thumb"><img src="images/products/smoke-detectors.jpg" alt="" /></span><span class="product-body"><span class="product-name">Smoke Detectors</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="enquiry.html" class="blueprint product-card" data-enquiry="Fire Detection and Alarm Systems" aria-hidden="true" tabindex="-1"><span class="duotone product-thumb"><img src="images/products/fire-detection-alarm.jpg" alt="" /></span><span class="product-body"><span class="product-name">Fire Detection and Alarm Systems</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="enquiry.html" class="blueprint product-card" data-enquiry="Escape Signages & Tapes" aria-hidden="true" tabindex="-1"><span class="duotone product-thumb"><img src="images/products/escape-signages.jpg" alt="" /></span><span class="product-body"><span class="product-name">Escape Signages &amp; Tapes</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="enquiry.html" class="blueprint product-card product-card-text" data-enquiry="Emergency Lighting Systems" aria-hidden="true" tabindex="-1"><span class="product-body product-body-text"><span class="product-name">Emergency Lighting Systems</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="enquiry.html" class="blueprint product-card product-card-text" data-enquiry="CCTV" aria-hidden="true" tabindex="-1"><span class="product-body product-body-text"><span class="product-name">CCTV</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+      <a href="enquiry.html" class="blueprint product-card product-card-text" data-enquiry="Burglary Alarm Systems" aria-hidden="true" tabindex="-1"><span class="product-body product-body-text"><span class="product-name">Burglary Alarm Systems</span><span class="product-link">Enquire<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BAND 7 — Numbers says it all / Why Choose Us ══ -->
 <section class="stats">
   <div class="container">
     <div class="section-head-center stats-head">
@@ -350,64 +275,13 @@
       <h2 style="color:#fff">Why Choose Us</h2>
     </div>
     <div class="stats-grid">
-      <div class="stat"><div class="stat-num">36</div><div class="stat-label">Training Programs</div></div>
-      <div class="stat"><div class="stat-num">9</div><div class="stat-label">Certified / Diploma Courses</div></div>
-      <div class="stat"><div class="stat-num">95%</div><div class="stat-label">Strike Rate</div></div>
-      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Satisfied Clients</div></div>
+      <div class="stat"><div class="stat-num" data-count="36">0</div><div class="stat-label">Training Programs</div></div>
+      <div class="stat"><div class="stat-num" data-count="258">0</div><div class="stat-label">Certified Courses</div></div>
+      <div class="stat"><div class="stat-num" data-count="100" data-suffix="%">0</div><div class="stat-label">Strike Rate</div></div>
+      <div class="stat"><div class="stat-num" data-count="100" data-suffix="%">0</div><div class="stat-label">Satisfied Clients</div></div>
     </div>
   </div>
 </section>
-
-<!-- ══ 4. CORPORATE TRAINING PHOTOS SCROLLING WITH COMPANY NAMES (4th Band) ══ -->
-<section class="clients">
-  <div class="container">
-    <div class="section-head-center">
-      <span class="eyebrow">Trusted By</span>
-      <h2>Our prestigious clients</h2>
-    </div>
-  </div>
-  <div class="marquee" id="clientsMarquee">
-    <div class="marquee-track">
-      <span class="client-badge">Ascendas Vinplex</span>
-      <span class="client-badge"><img src="images/clients/byd.svg" alt="BYD" /></span>
-      <span class="client-badge">Bontaz Hira</span>
-      <span class="client-badge"><img src="images/clients/hindustan-university.svg" alt="Hindustan Institute of Technology &amp; Science" /></span>
-      <span class="client-badge"><img src="images/clients/dlf.svg" alt="DLF" /></span>
-      <span class="client-badge"><img src="images/clients/nortonlifelock.svg" alt="NortonLifeLock" /></span>
-      <span class="client-badge"><img src="images/clients/tvs.png" alt="TVS" /></span>
-      <span class="client-badge"><img src="images/clients/arudra.png" alt="Arudra Engineers" /></span>
-      <span class="client-badge">Denix</span>
-      <span class="client-badge"><img src="images/clients/srf.png" alt="SRF" /></span>
-      <span class="client-badge" aria-hidden="true">Ascendas Vinplex</span>
-      <span class="client-badge" aria-hidden="true"><img src="images/clients/byd.svg" alt="" /></span>
-      <span class="client-badge" aria-hidden="true">Bontaz Hira</span>
-      <span class="client-badge" aria-hidden="true"><img src="images/clients/hindustan-university.svg" alt="" /></span>
-      <span class="client-badge" aria-hidden="true"><img src="images/clients/dlf.svg" alt="" /></span>
-      <span class="client-badge" aria-hidden="true"><img src="images/clients/nortonlifelock.svg" alt="" /></span>
-      <span class="client-badge" aria-hidden="true"><img src="images/clients/tvs.png" alt="" /></span>
-      <span class="client-badge" aria-hidden="true"><img src="images/clients/arudra.png" alt="" /></span>
-      <span class="client-badge" aria-hidden="true">Denix</span>
-      <span class="client-badge" aria-hidden="true"><img src="images/clients/srf.png" alt="" /></span>
-    </div>
-  </div>
-</section>
-
-<!-- ══ CTA ══ -->
-<section class="home-cta">
-  <div class="container home-cta-inner">
-    <div>
-      <h2>Ready to build a safer future?</h2>
-      <p>Explore our courses, book a corporate training, or send us a quick enquiry — our team responds within one working day.</p>
-    </div>
-    <div class="home-cta-actions">
-      <a href="contact.html" class="btn btn-ghost-dark">Contact Us</a>
-      <a href="enquiry.html" class="btn btn-flame">Send an Enquiry
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
 
 <!-- ══ FOOTER ══ -->
 <footer class="site-footer">
@@ -443,7 +317,7 @@
       <div class="footer-links">
         <a href="tel:+917845846112">7845846112 / 9342670267</a>
         <a href="mailto:info@genesissafetyindia.com">info@genesissafetyindia.com</a>
-        <span class="footer-muted">Koyambedu, Chennai - 600 107</span>
+        <span class="footer-muted">Arumbakkam, Chennai</span>
       </div>
     </div>
   </div>
@@ -460,6 +334,6 @@
   <svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.8-.6-3-1.3-5-4.4-5.2-4.6-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.6-.3.3c-.2.2-.3.4-.2.7.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1c.2-.2.4-.2.6-.1l2 .9c.3.2.5.2.5.4.1.1.1.6-.1 1.2Z"/></svg>
 </a>
 
-<script src="script.js?v=4"></script>
+<script src="script.js?v=9"></script>
 </body>
 </html>
