@@ -148,11 +148,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 /* ===== Header ===== */
 .site-header { position: -webkit-sticky; position: sticky; top: 0; z-index: 40; background: #fff; border-bottom: 1px solid var(--color-divider); box-shadow: var(--shadow-sm); transition: box-shadow 0.3s ease; }
 .site-header.scrolled { box-shadow: var(--shadow-md); }
-.nav-inner { display: flex; align-items: center; gap: 26px; padding: 12px 24px; }
-.logo { display: flex; align-items: center; gap: 12px; margin-right: auto; min-height: 60px; }
-.logo-img { height: 60px; width: auto; }
+.nav-inner { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 22px; padding: 12px 24px; }
+.brand-group { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.logo { display: flex; align-items: center; gap: 12px; min-height: 62px; flex-shrink: 0; }
+.logo-img { height: 62px; width: auto; }
 .logo-name { display: flex; flex-direction: column; font-family: var(--font-heading); font-weight: 400; font-size: 22px; letter-spacing: 0.01em; line-height: 1.05; color: var(--color-accent-900); text-transform: uppercase; }
 .logo-name small { font-family: var(--font-body); font-weight: 600; font-size: 11px; color: #5b6b84; letter-spacing: 0.01em; text-transform: none; }
+.header-badges { display: flex; align-items: center; gap: 8px; flex-shrink: 0; padding-left: 14px; border-left: 1px solid var(--color-divider); }
+.header-badge-img { height: 30px; width: 30px; object-fit: cover; border-radius: 50%; }
 .main-nav { display: flex; align-items: center; gap: 24px; font-family: var(--font-body); font-weight: 700; font-size: 14.5px; text-transform: uppercase; letter-spacing: 0.02em; }
 .main-nav a { display: inline-flex; align-items: center; color: var(--color-text); position: relative; padding: 6px 0; transition: color 0.2s ease; }
 .main-nav a::after { content: ''; position: absolute; left: 0; bottom: 0; width: 0; height: 3px; background: var(--flame); transition: width 0.25s ease; }
@@ -177,11 +180,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 /* ===== Mobile nav backdrop ===== */
 .nav-backdrop {
   position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 240;
-  background: rgba(3, 13, 31, 0.7);
-  opacity: 0; visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  background: rgba(3, 13, 31, 0.4);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s ease;
 }
-.nav-backdrop.show { opacity: 1; visibility: visible; }
+.nav-backdrop.show { opacity: 1; pointer-events: auto; }
 
 /* ===== First fold — Band 1 + Band 2 together fill the opening screen ===== */
 .first-fold { display: flex; flex-direction: column; }
@@ -331,8 +334,8 @@ h2 { font-size: clamp(32px, 4vw, 50px); line-height: 0.98; letter-spacing: .005e
   transition: border-color .2s ease, transform .2s ease;
 }
 .product-card:hover { border-color: var(--flame); transform: translateY(-4px); }
-.product-thumb { aspect-ratio: 4/3; overflow: hidden; background: #eef2f6; }
-.product-thumb img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.4s ease; }
+.product-thumb { aspect-ratio: 3/4; overflow: hidden; background: #eef2f6; }
+.product-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: center bottom; transition: transform 0.4s ease; }
 .product-card:hover .product-thumb img { transform: scale(1.05); }
 .product-body { padding: 16px 16px 18px; display: flex; flex-direction: column; gap: 8px; }
 .product-card-text { justify-content: center; background: var(--color-surface); }
@@ -468,7 +471,7 @@ h2 { font-size: clamp(32px, 4vw, 50px); line-height: 0.98; letter-spacing: .005e
 .course-detail-back:hover { color: var(--flame-600); }
 .course-detail-lead { font-size: 15.5px; color: #333f4d; line-height: 1.65; margin-bottom: 4px; }
 
-@media (max-width: 860px) {
+@media (max-width: 1100px) {
   .course-detail-grid { grid-template-columns: 1fr; gap: 28px; }
 }
 @media (max-width: 640px) {
@@ -701,6 +704,13 @@ textarea.input { min-height: 96px; resize: vertical; }
 }
 .footer-logo { height: 46px; width: auto; }
 .footer-grid > div > p { font-size: 14px; color: #8ea0b6; max-width: 36ch; }
+.footer-social { display: flex; gap: 12px; margin-top: 18px; }
+.footer-social a {
+  width: 36px; height: 36px; display: grid; place-items: center;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+  border-radius: 50%; color: #c4d1de; transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.footer-social a:hover { background: var(--flame); border-color: var(--flame); color: #fff; }
 .footer-grid h5 { color: #fff; font-family: var(--font-body); font-weight: 700; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 16px; }
 .footer-links { display: grid; gap: 10px; font-size: 14px; font-weight: 600; }
 .footer-links a { color: #c4d1de; min-height: 20px; transition: color 0.2s ease; }
@@ -735,7 +745,7 @@ textarea.input { min-height: 96px; resize: vertical; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1100px) {
   .utility-loc { display: none; }
 
   .main-nav {
@@ -785,6 +795,8 @@ textarea.input { min-height: 96px; resize: vertical; }
 
   .hamburger { display: flex; }
   .nav-cta { display: none; }
+  .header-badges { gap: 10px; }
+  .header-badge-img { height: 26px; width: 26px; }
   .product-grid-categories, .why-grid, .course-grid, .blog-grid, .testimonial-grid, .stats-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .course-card2-grid { grid-template-columns: repeat(2, 1fr); }
@@ -794,7 +806,15 @@ textarea.input { min-height: 96px; resize: vertical; }
   :root { --r-sm: 8px; --r-md: 12px; --r-lg: 16px; }
   .container { padding: 0 18px; }
 
-  .band1-inner { grid-template-columns: 1fr; }
+  .nav-inner { gap: 12px; padding: 10px 16px; }
+  .logo-img { height: 44px; }
+  .logo { min-height: 44px; gap: 8px; }
+  .logo-name { font-size: 15px; }
+  .logo-name small { font-size: 8px; }
+  .header-badges { gap: 6px; }
+  .header-badge-img { height: 22px; width: 22px; }
+
+  .band1-inner { grid-template-columns: 1fr; padding: 0; }
   .band1-photo { min-height: 0; height: 190px; }
   .band1-photo::after { background: linear-gradient(0deg, rgba(3,13,31,.5), transparent 45%); }
   .band1-programs { padding: 22px 18px; gap: 12px; }
