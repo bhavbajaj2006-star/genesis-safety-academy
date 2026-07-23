@@ -165,6 +165,82 @@
   });
 })();
 
+// ===== Testimonial video modal (click a testimonial to play its video) =====
+(function testimonialVideoModal() {
+  const cards = document.querySelectorAll('.testimonial-card');
+  if (!cards.length) return;
+
+  cards.forEach((card) => {
+    if (!card.querySelector('.testimonial-play-badge')) {
+      const badge = document.createElement('span');
+      badge.className = 'testimonial-play-badge';
+      badge.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+      card.appendChild(badge);
+    }
+  });
+
+  const backdrop = document.createElement('div');
+  backdrop.className = 'video-modal-backdrop';
+  backdrop.innerHTML =
+    '<div class="video-modal">' +
+      '<button type="button" class="video-modal-close" aria-label="Close video">' +
+        '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>' +
+      '</button>' +
+      '<div class="video-modal-player" id="videoModalPlayer"></div>' +
+      '<div class="video-modal-info" id="videoModalInfo"></div>' +
+    '</div>';
+  document.body.appendChild(backdrop);
+
+  const player = backdrop.querySelector('#videoModalPlayer');
+  const info = backdrop.querySelector('#videoModalInfo');
+  const closeBtn = backdrop.querySelector('.video-modal-close');
+  let lastFocused = null;
+
+  function openModal(card) {
+    const videoSrc = card.dataset.video;
+    const quote = card.querySelector('p') ? card.querySelector('p').textContent : '';
+    const authorEl = card.querySelector('.testimonial-author');
+
+    if (videoSrc) {
+      player.innerHTML = '<video src="' + videoSrc + '" controls autoplay playsinline></video>';
+    } else {
+      player.innerHTML =
+        '<div class="video-modal-placeholder">' +
+          '<span class="play-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>' +
+          '<p>Video testimonial coming soon</p>' +
+        '</div>';
+    }
+
+    info.innerHTML = '<p class="video-modal-quote">' + quote + '</p>' + (authorEl ? authorEl.outerHTML : '');
+
+    lastFocused = document.activeElement;
+    backdrop.classList.add('show');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+    document.addEventListener('keydown', onKeydown);
+  }
+
+  function closeModal() {
+    backdrop.classList.remove('show');
+    document.body.style.overflow = '';
+    player.innerHTML = '';
+    document.removeEventListener('keydown', onKeydown);
+    if (lastFocused) lastFocused.focus();
+  }
+
+  function onKeydown(e) {
+    if (e.key === 'Escape') closeModal();
+  }
+
+  cards.forEach((card) => {
+    card.addEventListener('click', () => openModal(card));
+  });
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', (e) => {
+    if (e.target === backdrop) closeModal();
+  });
+})();
+
 // ===== Gallery lightbox =====
 (function galleryLightbox() {
   const items = Array.from(document.querySelectorAll('.gallery-item'));
