@@ -86,15 +86,15 @@
 // ===== Active nav link for current page =====
 (function activeNavForPage() {
   const navLinks = document.querySelectorAll('.main-nav a[href]');
-  let current = location.pathname.split('/').pop();
-  if (current === '') current = 'index.html';
+  let current = location.pathname.split('/').pop().replace(/\.html$/, '');
+  if (current === '') current = 'index';
   const onCourseDetailPage = current.startsWith('course-');
 
   navLinks.forEach((link) => {
     const href = link.getAttribute('href');
     if (!href || href.startsWith('#')) return;
-    const linkPage = href.split('/').pop();
-    const isMatch = linkPage === current || (onCourseDetailPage && linkPage === 'courses.html');
+    const linkPage = href.split('/').pop().replace(/\.html$/, '');
+    const isMatch = linkPage === current || (onCourseDetailPage && linkPage === 'courses');
     link.classList.toggle('active', isMatch);
   });
 })();
