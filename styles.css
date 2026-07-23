@@ -824,6 +824,7 @@ h2 { font-size: clamp(32px, 4vw, 50px); line-height: 0.98; letter-spacing: .005e
 .contact-heading { color: #fff; margin: 10px 0 0; }
 .contact-methods { display: grid; gap: 14px; }
 .contact-method { display: flex; align-items: center; gap: 14px; color: #fff; }
+.contact-method > span:last-child { flex: 1; min-width: 0; }
 .contact-method-icon { width: 46px; height: 46px; flex: none; display: grid; place-items: center; background: rgba(255,255,255,.1); border: 2px solid rgba(255,255,255,.25); border-radius: var(--r-sm); }
 .contact-method-icon-wa { background: var(--wa); border: none; }
 .contact-method-label { display: block; font-family: var(--font-body); font-weight: 700; font-size: 11.5px; color: #b7c6db; text-transform: uppercase; letter-spacing: .04em; }
