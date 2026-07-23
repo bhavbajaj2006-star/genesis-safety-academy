@@ -145,6 +145,26 @@
   sessionStorage.removeItem('enquiryMessage');
 })();
 
+// ===== Testimonial carousels (one line, arrow navigation) =====
+(function testimonialCarousels() {
+  document.querySelectorAll('.testimonial-carousel').forEach((carousel) => {
+    const track = carousel.querySelector('.testimonial-track');
+    const prevBtn = carousel.querySelector('[data-dir="-1"]');
+    const nextBtn = carousel.querySelector('[data-dir="1"]');
+    if (!track) return;
+
+    function scrollByCard(dir) {
+      const card = track.querySelector('.testimonial-card');
+      if (!card) return;
+      const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 0;
+      track.scrollBy({ left: dir * (card.getBoundingClientRect().width + gap), behavior: 'smooth' });
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => scrollByCard(-1));
+    if (nextBtn) nextBtn.addEventListener('click', () => scrollByCard(1));
+  });
+})();
+
 // ===== Gallery lightbox =====
 (function galleryLightbox() {
   const items = Array.from(document.querySelectorAll('.gallery-item'));
