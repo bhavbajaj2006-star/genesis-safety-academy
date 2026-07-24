@@ -16,8 +16,9 @@ function render_course_card(array $c, bool $duplicate = false): void {
 }
 
 function render_home_testimonial(array $t): void {
+    $videoAttr = !empty($t['video_path']) ? ' data-video="' . h($t['video_path']) . '"' : '';
     ?>
-    <div class="blueprint testimonial-card">
+    <div class="blueprint testimonial-card"<?= $videoAttr ?>>
       <p>"<?= h($t['quote']) ?>"</p>
       <div class="testimonial-author">
         <?php if (!empty($t['logo_path'])): ?>

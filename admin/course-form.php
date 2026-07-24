@@ -84,8 +84,8 @@ require __DIR__ . '/includes/layout-top.php';
       <textarea id="lead_text" name="lead_text" style="min-height:90px; font-family:inherit; font-size:14px;"><?= h($course['lead_text']) ?></textarea>
     </div>
     <div class="field">
-      <label for="modules_text">Full Syllabus / Modules <span class="hint">(HTML allowed, optional)</span></label>
-      <textarea id="modules_text" name="modules_text"><?= h($course['modules_text']) ?></textarea>
+      <label for="modules_text">Full Syllabus / Modules <span class="hint">optional — use the toolbar to format</span></label>
+      <textarea id="modules_text" name="modules_text" data-rich-editor><?= h($course['modules_text']) ?></textarea>
     </div>
     <div class="field">
       <label for="sort_order">Display Order <span class="hint">(lower numbers show first)</span></label>

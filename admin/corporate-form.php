@@ -48,8 +48,8 @@ require __DIR__ . '/includes/layout-top.php';
       <input type="text" id="name" name="name" required value="<?= h($program['name']) ?>" />
     </div>
     <div class="field">
-      <label for="modules_text">Training Modules <span class="hint">(optional — shown when the program is expanded)</span></label>
-      <textarea id="modules_text" name="modules_text" style="min-height:90px; font-family:inherit; font-size:14px;"><?= h($program['modules_text']) ?></textarea>
+      <label for="modules_text">Training Modules <span class="hint">optional — shown when expanded, use the toolbar to format</span></label>
+      <textarea id="modules_text" name="modules_text" data-rich-editor><?= h($program['modules_text']) ?></textarea>
     </div>
     <div class="field">
       <label for="sort_order">Display Order <span class="hint">(lower numbers show first)</span></label>

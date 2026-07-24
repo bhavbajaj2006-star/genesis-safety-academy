@@ -3,7 +3,7 @@ require_once __DIR__ . '/../includes/auth.php';
 require_login();
 
 $id = isset($_GET['id']) ? (int) $_GET['id'] : (isset($_POST['id']) ? (int) $_POST['id'] : null);
-$t = ['type' => 'corporate', 'quote' => '', 'author_name' => '', 'author_meta' => '', 'avatar_initials' => '', 'logo_path' => '', 'sort_order' => 0];
+$t = ['type' => 'corporate', 'quote' => '', 'author_name' => '', 'author_meta' => '', 'avatar_initials' => '', 'logo_path' => '', 'video_path' => '', 'sort_order' => 0];
 if ($id) {
     $stmt = db()->prepare('SELECT * FROM testimonials WHERE id = :id');
     $stmt->execute(['id' => $id]);
@@ -28,19 +28,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($logoPath === false) {
             $error = upload_error();
         } else {
-            $pdo = db();
-            if ($id) {
-                $sql = 'UPDATE testimonials SET type=:type, quote=:quote, author_name=:author_name, author_meta=:author_meta, avatar_initials=:avatar_initials, sort_order=:sort_order' .
-                       ($logoPath ? ', logo_path=:logo_path' : '') . ' WHERE id=:id';
-                $params = ['type' => $type, 'quote' => $quote, 'author_name' => $authorName, 'author_meta' => $authorMeta, 'avatar_initials' => $avatarInitials, 'sort_order' => $sortOrder, 'id' => $id];
-                if ($logoPath) $params['logo_path'] = $logoPath;
+            $videoPath = handle_video_upload('video', 'testimonials');
+            if ($videoPath === false) {
+                $error = upload_error();
             } else {
-                $sql = 'INSERT INTO testimonials (type, quote, author_name, author_meta, avatar_initials, sort_order, logo_path) VALUES (:type, :quote, :author_name, :author_meta, :avatar_initials, :sort_order, :logo_path)';
-                $params = ['type' => $type, 'quote' => $quote, 'author_name' => $authorName, 'author_meta' => $authorMeta, 'avatar_initials' => $avatarInitials, 'sort_order' => $sortOrder, 'logo_path' => $logoPath ?: null];
+                $pdo = db();
+                if ($id) {
+                    $sql = 'UPDATE testimonials SET type=:type, quote=:quote, author_name=:author_name, author_meta=:author_meta, avatar_initials=:avatar_initials, sort_order=:sort_order' .
+                           ($logoPath ? ', logo_path=:logo_path' : '') .
+                           ($videoPath ? ', video_path=:video_path' : '') . ' WHERE id=:id';
+                    $params = ['type' => $type, 'quote' => $quote, 'author_name' => $authorName, 'author_meta' => $authorMeta, 'avatar_initials' => $avatarInitials, 'sort_order' => $sortOrder, 'id' => $id];
+                    if ($logoPath) $params['logo_path'] = $logoPath;
+                    if ($videoPath) $params['video_path'] = $videoPath;
+                } else {
+                    $sql = 'INSERT INTO testimonials (type, quote, author_name, author_meta, avatar_initials, sort_order, logo_path, video_path) VALUES (:type, :quote, :author_name, :author_meta, :avatar_initials, :sort_order, :logo_path, :video_path)';
+                    $params = ['type' => $type, 'quote' => $quote, 'author_name' => $authorName, 'author_meta' => $authorMeta, 'avatar_initials' => $avatarInitials, 'sort_order' => $sortOrder, 'logo_path' => $logoPath ?: null, 'video_path' => $videoPath ?: null];
+                }
+                $pdo->prepare($sql)->execute($params);
+                flash_set($id ? 'Testimonial updated.' : 'Testimonial created.', 'success');
+                redirect('testimonials.php');
             }
-            $pdo->prepare($sql)->execute($params);
-            flash_set($id ? 'Testimonial updated.' : 'Testimonial created.', 'success');
-            redirect('testimonials.php');
         }
     }
 }
@@ -83,6 +90,13 @@ require __DIR__ . '/includes/layout-top.php';
         <div class="current-image"><img src="../<?= h($t['logo_path']) ?>" alt="" style="object-fit:contain;" /><span class="hint">Current logo — upload a new one to replace it</span></div>
       <?php endif; ?>
       <input type="file" id="logo" name="logo" accept="image/*" />
+    </div>
+    <div class="field">
+      <label for="video">Video Testimonial <span class="hint">(optional — MP4, WEBM or OGG, max <?= round((defined('MAX_VIDEO_UPLOAD_SIZE') ? MAX_VIDEO_UPLOAD_SIZE : 20*1024*1024) / 1024 / 1024) ?>MB. When set, clicking this testimonial on the site plays the video.)</span></label>
+      <?php if (!empty($t['video_path'])): ?>
+        <div class="current-image"><video src="../<?= h($t['video_path']) ?>" style="width:120px; height:70px; object-fit:cover; border-radius:8px;" muted></video><span class="hint">Current video — upload a new one to replace it</span></div>
+      <?php endif; ?>
+      <input type="file" id="video" name="video" accept="video/mp4,video/webm,video/ogg" />
     </div>
     <div class="field">
       <label for="sort_order">Display Order</label>

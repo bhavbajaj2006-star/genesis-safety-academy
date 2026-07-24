@@ -83,8 +83,8 @@ require __DIR__ . '/includes/layout-top.php';
       <input type="text" id="seo_keywords" name="seo_keywords" placeholder="e.g. fire safety tips, workplace safety, chennai" value="<?= h($post['seo_keywords']) ?>" />
     </div>
     <div class="field">
-      <label for="body">Body Content <span class="hint">(HTML allowed — e.g. &lt;p&gt;, &lt;h3&gt;, &lt;ul&gt;&lt;li&gt;, &lt;strong&gt;)</span></label>
-      <textarea id="body" name="body" required><?= h($post['body']) ?></textarea>
+      <label for="body">Body Content <span class="hint">use the toolbar to format — bold, headings, lists, links</span></label>
+      <textarea id="body" name="body" required data-rich-editor><?= h($post['body']) ?></textarea>
     </div>
     <div>
       <button type="submit" class="btn btn-primary">Save Post</button>

@@ -14,3 +14,7 @@ define('SITE_URL', '');
 
 // Max upload size for images, in bytes (default 5 MB)
 define('MAX_UPLOAD_SIZE', 5 * 1024 * 1024);
+
+// Max upload size for testimonial videos, in bytes (default 20 MB —
+// keep this modest on free hosting, which often caps PHP uploads around 20-25MB)
+define('MAX_VIDEO_UPLOAD_SIZE', 20 * 1024 * 1024);

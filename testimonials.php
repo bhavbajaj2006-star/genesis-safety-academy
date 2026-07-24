@@ -6,8 +6,9 @@ $corporate = db()->query("SELECT * FROM testimonials WHERE type='corporate' ORDE
 $students = db()->query("SELECT * FROM testimonials WHERE type='student' ORDER BY sort_order ASC, id ASC")->fetchAll();
 
 function render_testimonial_card(array $t): void {
+    $videoAttr = !empty($t['video_path']) ? ' data-video="' . h($t['video_path']) . '"' : '';
     ?>
-    <div class="blueprint testimonial-card">
+    <div class="blueprint testimonial-card"<?= $videoAttr ?>>
       <p>"<?= h($t['quote']) ?>"</p>
       <div class="testimonial-author">
         <?php if (!empty($t['logo_path'])): ?>
