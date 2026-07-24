@@ -1,0 +1,6 @@
+# Real database credentials — never commit this. Copy config.example.php instead.
+config.php
+
+# Admin-uploaded content (images added via the CMS) — not part of the source site.
+uploads/*
+!uploads/.gitkeep
