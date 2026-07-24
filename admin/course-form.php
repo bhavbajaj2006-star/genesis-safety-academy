@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $error = upload_error();
         } else {
             $pdo = db();
-            $slug = unique_slug($pdo, 'courses', $name, $id);
+            $slug = $id ? $course['slug'] : unique_slug($pdo, 'courses', $name, $id);
             if ($id) {
                 $sql = 'UPDATE courses SET name=:name, slug=:slug, tag=:tag, duration_text=:duration_text, lead_text=:lead_text, modules_text=:modules_text, featured=:featured, sort_order=:sort_order' .
                        ($imagePath ? ', image_path=:image_path' : '') . ' WHERE id=:id';

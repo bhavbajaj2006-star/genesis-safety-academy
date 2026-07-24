@@ -1,10 +1,11 @@
 <?php
 /**
  * Shared site header/nav, included by every dynamic .php page.
- * Expects (optional): $pageTitle, $pageDescription, $cssVersion, $jsVersion
+ * Expects (optional): $pageTitle, $pageDescription, $pageKeywords, $cssVersion, $jsVersion
  */
 $pageTitle = $pageTitle ?? 'Genesis Safety Academy';
 $pageDescription = $pageDescription ?? "Genesis Safety Academy, Chennai — Fire, Industrial, Construction, Chemical & Environmental Safety courses, corporate training, certifications and safety products.";
+$pageKeywords = $pageKeywords ?? '';
 $cssVersion = $cssVersion ?? '70';
 $jsVersion = $jsVersion ?? '12';
 ?><!DOCTYPE html>
@@ -14,6 +15,9 @@ $jsVersion = $jsVersion ?? '12';
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title><?= h($pageTitle) ?></title>
 <meta name="description" content="<?= h($pageDescription) ?>" />
+<?php if ($pageKeywords !== ''): ?>
+<meta name="keywords" content="<?= h($pageKeywords) ?>" />
+<?php endif; ?>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css?v=<?= h($cssVersion) ?>" />

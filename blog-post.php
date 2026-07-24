@@ -19,6 +19,7 @@ if (!$post) {
 
 $pageTitle = h($post['title']) . ' | Genesis Safety Academy Blog';
 $pageDescription = $post['excerpt'] ?: $post['title'];
+$pageKeywords = $post['seo_keywords'] ?? '';
 require __DIR__ . '/includes/site-header.php';
 ?>
 
