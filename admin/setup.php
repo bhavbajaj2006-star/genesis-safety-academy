@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Create Admin Account | Genesis Safety Academy</title>
-<link rel="stylesheet" href="admin.css" />
+<link rel="stylesheet" href="admin.css?v=2" />
 </head>
 <body class="login-page">
   <div class="login-card">
